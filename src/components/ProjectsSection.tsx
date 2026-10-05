@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowUpRight, Eye } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowUpRight, Eye, Smartphone, HeartPulse, BarChart3, Wrench } from 'lucide-react';
 import { PROJECTS } from '../data/portfolioData';
 import { ScreenView } from '../types';
 
@@ -8,6 +8,23 @@ interface ProjectsSectionProps {
 }
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenScreen }) => {
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
+
+  const getProjectIcon = (id: string) => {
+    switch (id) {
+      case 'dem-driver':
+        return <Smartphone className="w-8 h-8 text-[#F26A1B]" />;
+      case 'sante-meds':
+        return <HeartPulse className="w-8 h-8 text-[#16A34A]" />;
+      case 'analyseur-annulations':
+        return <BarChart3 className="w-8 h-8 text-[#0284C7]" />;
+      case 'artisan-pro':
+        return <Wrench className="w-8 h-8 text-[#D97706]" />;
+      default:
+        return <Eye className="w-8 h-8 text-[#F26A1B]" />;
+    }
+  };
+
   return (
     <section id="projets" className="py-20 bg-[#FAF9F5] border-b border-[#E7E5E4]">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,13 +51,26 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenScreen }
             >
               {/* Image Preview with Category Badge */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F4F2EC]">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-104"
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-                />
+                {!imageErrors[project.id] ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    onError={() => {
+                      setImageErrors((prev) => ({ ...prev, [project.id]: true }));
+                    }}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-104"
+                    referrerPolicy="no-referrer"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-[#1C2127] to-[#12161A] p-6 flex flex-col items-center justify-center text-center text-white relative">
+                    <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-3">
+                      {getProjectIcon(project.id)}
+                    </div>
+                    <div className="font-bold text-base text-white">{project.title}</div>
+                    <div className="text-xs text-[#D6D3D1] mt-1 font-mono">{project.metrics}</div>
+                  </div>
+                )}
 
                 {/* Category tag at top right */}
                 <div className="absolute top-3 right-3 px-2.5 py-1 bg-white/95 backdrop-blur-xs rounded-md text-[11px] font-semibold text-[#1C1917] shadow-xs border border-[#E7E5E4]/80">
