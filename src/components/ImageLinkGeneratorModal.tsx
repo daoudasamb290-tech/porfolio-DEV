@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { X, Copy, Check, ExternalLink, Image as ImageIcon, Sparkles, Code } from 'lucide-react';
 import { DavinLogo } from './DavinLogo';
+import papaDaoudaImg from '../assets/images/Papa daouda.jpg';
+import workspaceImg from '../assets/images/workspace_dakar_almadies_1790778812773.jpg';
+import demDriverImg from '../assets/images/dem_driver_mockup_1790778824488.jpg';
+import santeMedsImg from '../assets/images/sante_meds_mockup_1790778836060.jpg';
+import telemetryImg from '../assets/images/telemetry_analytics_mockup_1790778847338.jpg';
+import artisanProImg from '../assets/images/artisan_pro_mockup_1790861217657.jpg';
 
 interface ImageLinkGeneratorModalProps {
   isOpen: boolean;
@@ -23,31 +29,37 @@ export const ImageLinkGeneratorModal: React.FC<ImageLinkGeneratorModalProps> = (
     {
       id: 'papa-daouda',
       title: 'Papa Daouda Samb (Costume & Cravate Orange)',
-      path: '/src/assets/images/Papa daouda.jpg',
+      path: papaDaoudaImg,
       aspect: 'Portrait',
     },
     {
       id: 'workspace',
       title: 'Espace de travail Almadies',
-      path: '/src/assets/images/workspace_dakar_almadies_1790778812773.jpg',
+      path: workspaceImg,
       aspect: '16:9',
     },
     {
       id: 'dem-driver',
       title: 'Maquette DEM Driver PWA',
-      path: '/src/assets/images/dem_driver_mockup_1790778824488.jpg',
+      path: demDriverImg,
       aspect: '16:9',
     },
     {
       id: 'sante-meds',
       title: 'Maquette Santé & Médicaments',
-      path: '/src/assets/images/sante_meds_mockup_1790778836060.jpg',
+      path: santeMedsImg,
       aspect: '16:9',
     },
     {
       id: 'telemetry',
       title: 'Dashboard Analyseur d’Annulations',
-      path: '/src/assets/images/telemetry_analytics_mockup_1790778847338.jpg',
+      path: telemetryImg,
+      aspect: '16:9',
+    },
+    {
+      id: 'artisan-pro',
+      title: 'Maquette ArtisanPro Sénégal',
+      path: artisanProImg,
       aspect: '16:9',
     },
   ];

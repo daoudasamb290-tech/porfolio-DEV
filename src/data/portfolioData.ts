@@ -1,4 +1,8 @@
 import { ProjectItem, PhilosophyCard, TechStackItem, ExperienceItem, TestimonialItem } from '../types';
+import demDriverMockup from '../assets/images/dem_driver_mockup_1790778824488.jpg';
+import santeMedsMockup from '../assets/images/sante_meds_mockup_1790778836060.jpg';
+import telemetryMockup from '../assets/images/telemetry_analytics_mockup_1790778847338.jpg';
+import artisanProMockup from '../assets/images/artisan_pro_mockup_1790861217657.jpg';
 
 export const PERSONAL_INFO = {
   name: 'Samb Papa Daouda',
@@ -167,7 +171,7 @@ export const PROJECTS: ProjectItem[] = [
     description: 'Marketplace de transport interurbain au Sénégal. Mise en relation directe entre chauffeurs et passagers avec validation de tickets instantanée.',
     tags: ['React', 'Java', 'Wave Pay'],
     metrics: '120+ réservations le 1er mois',
-    image: '/src/assets/images/dem_driver_mockup_1790778824488.jpg',
+    image: demDriverMockup,
     screenId: 'dem-driver',
     caseStudyAvailable: true,
     liveUrl: 'https://dem-nioudem.vercel.app/',
@@ -179,7 +183,7 @@ export const PROJECTS: ProjectItem[] = [
     description: "Application informant sur les pharmacies de garde en temps réel et assurant la livraison à domicile des médicaments achetés par les clients.",
     tags: ['React', 'Pharmacie de garde', 'Livraison express'],
     metrics: 'Garde 24/7 & Livraison rapide',
-    image: '/src/assets/images/sante_meds_mockup_1790778836060.jpg',
+    image: santeMedsMockup,
     screenId: 'sante-meds',
     caseStudyAvailable: false,
     liveUrl: 'https://pharma-tiv.ai.studio/',
@@ -191,7 +195,7 @@ export const PROJECTS: ProjectItem[] = [
     description: "Dashboard & back-office décisionnel pour flottes de transport. Diagnostic en temps réel des motifs d'abandons et alertes prédictives.",
     tags: ['SQL', 'Java', 'Tableaux de bord'],
     metrics: "-28% d'annulations en 60 jours",
-    image: '/src/assets/images/telemetry_analytics_mockup_1790778847338.jpg',
+    image: telemetryMockup,
     screenId: 'analytics',
     caseStudyAvailable: false,
     liveUrl: 'https://dashbord-gold-chi.vercel.app/',
@@ -203,7 +207,7 @@ export const PROJECTS: ProjectItem[] = [
     description: 'Devis et factures pour plombiers, électriciens et maçons : mode informel (reçu) ou formel (TVA 18 % et NINEA) en 1 clic, hors-ligne, partage par WhatsApp, calculs en FCFA.',
     tags: ['React', 'TypeScript', 'Hors-ligne', 'Wave'],
     metrics: 'Devis accepté → Facture en 1 geste',
-    image: '/src/assets/images/artisan_pro_mockup_1790861217657.jpg',
+    image: artisanProMockup,
     screenId: 'artisan-pro',
     caseStudyAvailable: false,
     liveUrl: 'https://artisanprosn.vercel.app/',
